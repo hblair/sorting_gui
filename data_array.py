@@ -9,7 +9,6 @@ import re
 
 a = open('mass.AME12.txt','r')
 data =''.join(a.readlines())
-
 find = re.compile('\n.+\n').findall(data)
 '''
 Here, I searched the long string data, and seperated it into a list of strings,

@@ -8,7 +8,7 @@ Searching Function
 
 from data_array import final
 
-def acquire(Theory=False,Q_low=False,Q_high=False,A_low=False,A_high=False,Sym=False):
+def acquire(Q_low,Q_high,A_low,A_high,Theory=False,Sym=False):
     '''
     This is going to be the complete searching function that will take
     in user inputs from the GUI, and return the desired values from the 
@@ -24,10 +24,10 @@ def acquire(Theory=False,Q_low=False,Q_high=False,A_low=False,A_high=False,Sym=F
     args_str=['Qlow','Qhigh','Alow','Ahigh']
     
     for i in range(0,len(args)):
-        if args[i] != False:
-            globals()[args_str[i]] = float(args[i])
-        else:
+        if args[i] == "":
             globals()[args_str[i]] = False
+        else:
+            globals()[args_str[i]] = float(args[i])
         
     
     pdat = []
@@ -110,11 +110,7 @@ def acquire(Theory=False,Q_low=False,Q_high=False,A_low=False,A_high=False,Sym=F
 
     return pdat
            
-            
 
-    
-    
-#print acquire(Theory=False, Qlow= 7000, Qhigh= 8000, Alow= 1, Ahigh= 20, Sym=False)
     
         
             
